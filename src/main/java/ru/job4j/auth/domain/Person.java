@@ -48,11 +48,11 @@ public class Person {
             return false;
         }
         Person person = (Person) o;
-        return id == person.id;
+        return id == person.id && Objects.equals(login, person.login) && Objects.equals(password, person.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(id, login, password);
     }
 }

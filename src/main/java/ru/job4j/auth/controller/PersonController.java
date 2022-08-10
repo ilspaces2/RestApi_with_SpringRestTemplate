@@ -27,7 +27,7 @@ public class PersonController {
     public ResponseEntity<Person> findById(@PathVariable int id) {
         var person = personService.findById(id);
         return new ResponseEntity<>(
-                person.orElse(new Person()),
+                person.orElse(null),
                 person.isPresent() ? HttpStatus.OK : HttpStatus.NOT_FOUND
         );
     }
